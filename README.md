@@ -1,2 +1,2 @@
 # angular-component-generator
-Easy Bat file to generate angular components at the specified path
+Simple BAT file I use to generate Angular components at the specified path
