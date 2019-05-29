@@ -1,18 +1,25 @@
 @echo off
 :BEGIN
+echo.
 SET /P TYPE=What type of component are you generating (c, s, p, d,...)? 
-echo ---------------------------------------------------------- 
+echo.
 echo Enter the path. Path name ends with component name. Example:
 echo app\ui\technical\users\UsersTable
-echo ----------------------------------------------------------
+echo.
 SET /P FOLDERPATH=Path? app\
 SET command=npm run ng g %TYPE% %FOLDERPATH% %NAME%
-echo ----------------------------------------------------------
+
+echo.
 echo %command%
-echo ----------------------------------------------------------
+echo.
+
 SET /P AREYOUSURE=Are you sure you want to execute this command (y/n)? 
 IF /I "%AREYOUSURE%" NEQ "y" GOTO END
+
+echo.
 call %command%
+
+echo.
 SET /P GOAGAIN=Do you want to generate something else? (y/n)? 
 IF /I "%GOAGAIN%" == "y" GOTO BEGIN
 :END
